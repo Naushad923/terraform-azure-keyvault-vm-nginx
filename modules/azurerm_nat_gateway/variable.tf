@@ -1,3 +1,0 @@
-variable "nat_gateway" {
-  
-}

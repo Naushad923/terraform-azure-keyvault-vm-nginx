@@ -1,1 +1,0 @@
-variable "key-vault-detail" {}

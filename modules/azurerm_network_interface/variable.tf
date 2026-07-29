@@ -1,3 +1,0 @@
-variable "nic_detail" {
-  
-}

@@ -1,3 +1,0 @@
-variable "bastion_detail" {
-  
-}
