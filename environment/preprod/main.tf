@@ -27,25 +27,25 @@ module "virtual_machine" {
   source     = "../../modules/azurerm_virtual_machine"
   vm_detail  = var.vm_details
 }
-# module "bastion_host" {
-#   depends_on     = [module.subnet, module.public_ip]
-#   source         = "../../modules/azurerm_bastion_host"
-#   bastion_detail = var.bastion_details
+ module "bastion_host" {
+   depends_on     = [module.subnet, module.public_ip]
+   source         = "../../modules/azurerm_bastion_host"
+   bastion_detail = var.bastion_details
 
-# }
+ }
 
-# module "nat_gateway" {
-#   depends_on  = [module.public_ip]
-#   source      = "../../modules/azurerm_nat_gateway"
-#   nat_gateway = var.nat_gateways
-# }
+ module "nat_gateway" {
+   depends_on  = [module.public_ip]
+   source      = "../../modules/azurerm_nat_gateway"
+   nat_gateway = var.nat_gateways
+ }
 
-# module "nsg" {
-#   depends_on = [module.subnet]
-#   source     = "../../modules/azurerm_network_security_group"
-#   nsg_detail = var.nsg_details
+ module "nsg" {
+   depends_on = [module.subnet]
+   source     = "../../modules/azurerm_network_security_group"
+   nsg_detail = var.nsg_details
 
-# }
+ }
 
 module "key_vault" {
   depends_on = [ module.resource_group]
